@@ -1,0 +1,217 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="bootstrap-theme.css">
+    <link rel="stylesheet" href="owl/owl.carousel.css">
+    <link rel="stylesheet" href="owl/owl.theme.css">
+    <link rel="stylesheet" href="owl/owl.transitions.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="col-xs-12 top">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>Collaborative editing with Plone and Smashdocs</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <h3>Enterprise CMS Plone 5 meets Collaboration</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div id="videojukebox" class="ddvideoGallery">
+                    <div class="videoWrapper" id="player"></div>
+                    <div id="playlist"></div>
+                    <img src="images/left_arrow.png" class="prev" alt="">
+                    <img src="images/right_arrow.png" class="next" alt="">
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <h2>Features</h2>
+                <p class="bold">Content Management Features</p>
+                <ul>
+                    <li>Highly secure CMS Plone 5</li>
+                    <li>Very flexible access control</li>
+                    <li>Configurable workflows</li>
+                    <li>Custom content types</li>
+                </ul>
+                <p class="bold">Collaboration Features</p>
+                <ul>
+                    <li>All changes in one document</li>
+                    <li>The document knows whats new to every user</li>
+                    <li>Automatic audit compliance of the document to all changes and all communication</li>
+                    <li>End-to-end control and document lifecycle</li>
+                    <li>Concurrent editing</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row links">
+            <div class="col-sm-12">
+                <a href="https://zopyx.com/" target="_blank" class="link">
+                    <img src="images/link_1.png" alt="">
+                </a>
+                <a href="https://smashdocs.net/" target="_blank" class="link">
+                    <img class="middle_img" src="images/link_2.png" alt="">
+                </a>
+                <a href="https://www.plone.org/" target="_blank" class="link">
+                    <img class="last_img" src="images/link_3.png" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h3>Andreas Jung/ZOPYX</h3>
+                    <br>
+                    <img src="images/img_1.png" alt="">
+                    <p>Tübingen, Germany</p>
+                    <br>
+                    <img src="images/img_2.png" alt="">
+                    <p>+49 7071 793376</p>
+                    <br>
+                    <img src="images/img_3.png" alt="">
+                    <p>info@zopyx.com</p>
+                </div>
+                <div class="col-sm-6 text-right socials">
+                    <a href="">
+                        <img src="images/soc_google.png" alt="">
+                    </a>
+                    <a href="">
+                        <img src="images/soc_facebook.png" alt="">
+                    </a>
+                    <a href="">
+                        <img src="images/soc_twitter.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="owl/owl.carousel.min.js"></script>
+</body>
+<script>
+var tag = document.createElement('script');
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var player;
+
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+        events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+        },
+        playerVars: {
+            'autoplay': 0,
+            'controls': 1,
+            listType: 'playlist',
+            list: 'PLsbx-uRdh2-0p_wOX2lont-hicsLn3QWe',
+        }
+    });
+}
+
+// 4. The API will call this function when the video player is ready.
+function onPlayerReady(event) {
+    event.target.stopVideo();
+
+    window.setTimeout(function() {
+        var htmlStr = '',
+            titlesArray = [],
+            videosArray = player.getPlaylist(),
+            title;
+
+
+        html = $.ajax({
+            url: "https://www.googleapis.com/youtube/v3/playlistItems?playlistId=" + "PLsbx-uRdh2-0p_wOX2lont-hicsLn3QWe" + "&maxResults=30&key=AIzaSyAInWSv2txSIU46f4AzpsULyddCz_P9jms&fields=items(snippet(title))&part=snippet",
+            dataType: "jsonp",
+            success: function(data) {
+                return data
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert(textStatus, +' | ' + errorThrown);
+            },
+            async: false
+        });
+
+        html.then(function(data) {
+            data.items.map(function(it) {
+                titlesArray.push(it.snippet.title)
+            })
+
+            for (var j = 0; j <= videosArray.length - 1; j++) {
+
+                console.log(titlesArray[j]);
+
+                var vtmb = $('<img src="http://img.youtube.com/vi/' + videosArray[j] + '/default.jpg">');
+                htmlStr += '<div class="item"><img data-vid="' + videosArray[j] + '" src="' + vtmb[0].src + '" alt=""><p class="v_title">' + titlesArray[j] + '</p></div>\n';
+            }
+
+            console.log(htmlStr);
+
+
+            $('#playlist').html(htmlStr);
+
+            var owl = $("#playlist");
+
+            owl.owlCarousel({
+                items: 3,
+                lazyLoad: true,
+                navigation: false,
+                pagination: false,
+            });
+
+            $(".next").click(function() {
+                owl.trigger('owl.next');
+            })
+            $(".prev").click(function() {
+                owl.trigger('owl.prev');
+            })
+
+            $('.item img').click(function(e) {
+                e.preventDefault();
+                player.cueVideoById($(e.target).data('vid'));
+                event.target.playVideo();
+            });
+        })
+
+
+
+
+
+
+    }, 2000)
+}
+
+
+
+var done = false;
+
+function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING && !done) {
+        done = true;
+    }
+}
+
+function stopVideo() {
+    player.stopVideo();
+}
+</script>
+
+</html>
