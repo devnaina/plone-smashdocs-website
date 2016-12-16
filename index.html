@@ -166,7 +166,6 @@ function onPlayerReady(event) {
             })
 
             for (var j = 0; j <= videosArray.length - 1; j++) {
-                console.log(videosArray[j]);
                 var vtmb = $('<img src="https://img.youtube.com/vi/' + videosArray[j] + '/default.jpg">');
                 htmlStr += '<div class="item"><img data-vid="' + videosArray[j] + '" src="' + vtmb[0].src + '" alt=""><p class="v_title">' + titlesArray[j] + '</p></div>\n';
             }
