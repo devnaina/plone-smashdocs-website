@@ -21,7 +21,7 @@
         <div class="col-xs-12 top">
             <div class="row">
                 <div class="col-sm-6">
-                    <h1>Collaborative editing with Plone and Smashdocs</h1>
+                    <h1>Collaborative editing with<br/> Plone and Smashdocs</h1>
                 </div>
             </div>
             <div class="row">
@@ -37,8 +37,8 @@
                 <div id="videojukebox" class="ddvideoGallery">
                     <div class="videoWrapper" id="player"></div>
                     <div id="playlist"></div>
-                    <img src="images/left_arrow.png" class="prev" alt="">
-                    <img src="images/right_arrow.png" class="next" alt="">
+                    <img src="images/left_arrow.png" class="prev" alt="" style="display: none">
+                    <img src="images/right_arrow.png" class="next" alt="" style="display: none">
                 </div>
             </div>
             <div class="col-sm-5">
@@ -80,7 +80,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <h3>Andreas Jung/ZOPYX</h3>
+                    <h3>Andreas Jung/ZOPYX</h4>
                     <br>
                     <img src="images/img_1.png" alt="">
                     <p>Tübingen, Germany</p>
@@ -89,7 +89,7 @@
                     <p>+49 7071 793376</p>
                     <br>
                     <img src="images/img_3.png" alt="">
-                    <p><a href="mailto:info@zopyx.com">info@zopyx.com</a></p>
+                    <p><a class="mailto" href="mailto:info@zopyx.com">info@zopyx.com</a></p>
                 </div>
                 <div class="col-sm-6 text-right socials">
                     <a href="https://plus.google.com/u/0/103978092068967885341">
@@ -101,6 +101,11 @@
                     <a href="https://twitter.com/xmldirector">
                         <img src="images/soc_twitter.png" alt="">
                     </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12" id="copyright">
+                    &copy; 2016, ZOPYX, <a href="https://zopyx.com">www.zopyx.com</a> &bullet; <a href="https://zopyx.com/imprint">Imprint</a>
                 </div>
             </div>
         </div>
@@ -161,14 +166,9 @@ function onPlayerReady(event) {
             })
 
             for (var j = 0; j <= videosArray.length - 1; j++) {
-
-                console.log(titlesArray[j]);
-
-                var vtmb = $('<img src="http://img.youtube.com/vi/' + videosArray[j] + '/default.jpg">');
+                var vtmb = $('<img src="https://img.youtube.com/vi/' + videosArray[j] + '/default.jpg">');
                 htmlStr += '<div class="item"><img data-vid="' + videosArray[j] + '" src="' + vtmb[0].src + '" alt=""><p class="v_title">' + titlesArray[j] + '</p></div>\n';
             }
-
-            console.log(htmlStr);
 
 
             $('#playlist').html(htmlStr);
@@ -181,6 +181,9 @@ function onPlayerReady(event) {
                 navigation: false,
                 pagination: false,
             });
+
+            $(".next").show();
+            $(".prev").show();
 
             $(".next").click(function() {
                 owl.trigger('owl.next');
@@ -201,7 +204,7 @@ function onPlayerReady(event) {
 
 
 
-    }, 2000)
+    }, 1000)
 }
 
 
