@@ -110,6 +110,11 @@ ul li {
     height: 240px;
 }
 
+.websites a {
+    color: white;
+    text-align: left;
+}
+
 .socials img {
     position: relative;
     top: calc(50% - 32px);
@@ -282,4 +287,8 @@ img.next {
 
 #copyright a {
     color: white;
+}
+
+.inverted {
+    filter: invert(100%);
 }
