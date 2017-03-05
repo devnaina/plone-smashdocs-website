@@ -292,3 +292,31 @@ img.next {
 .inverted {
     filter: invert(100%);
 }
+
+
+table.pricing {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.pricing tr {
+    border: 1px solid #ddd;
+}
+
+.pricing th,
+.pricing td {
+    border: 1px solid #ddd;
+    padding: 0.25em;
+    padding-right: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    text-align: center;
+    white-space: nowrap;
+}
+
+span.available {
+    content: url(images/check.png);
+    width: 24px;
+    display: inline;
+}
