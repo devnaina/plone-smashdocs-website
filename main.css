@@ -320,3 +320,9 @@ span.available {
     width: 24px;
     display: inline;
 }
+
+.screenshot {
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    margin-top: 0.25em;
+}
