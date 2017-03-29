@@ -329,9 +329,10 @@ table.pricing {
 }
 
 
-span.available {
+span.available:before {
     content: url(images/check.png);
     width: 24px;
+    height: 24px;
     display: inline;
 }
 
