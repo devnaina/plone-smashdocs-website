@@ -189,7 +189,7 @@ p {
 .top {
     width: 100vw;
     min-height: 270px;
-    height: auto;
+    height: auto; 
     background-image: url('images/top.png');
     background-size: cover;
     background-position: 35%;
@@ -339,4 +339,8 @@ span.available {
     border: 2px solid #ddd;
     border-radius: 10px;
     margin-top: 0.25em;
+}
+
+#logo {
+    margin-left: 45px;
 }
