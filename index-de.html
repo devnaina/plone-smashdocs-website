@@ -40,7 +40,7 @@ function googleTranslateElementInit() {
         <div class="col-xs-12 top">
             <div class="row">
                 <div class="col-sm-6">
-                    <img id="logo"/>
+                    <img id="logo" src="images/logo_DE.png"/>
                 </div>
                 <div class="col-sm-6">
                     <h1>Texte gemeinsam bearbeiten, verwalten und publizieren</h1>
@@ -320,7 +320,7 @@ function googleTranslateElementInit() {
                 <p class="bold">SMASHDOCs</p>
                 <ul>
                     <li>Individuelle Integration von SMASHDOCs mit Ihren Webapplikationen und Portalen</li>
-                    <li>Wir übernehmen auf Wunsch Hosting und Warting der SMASHDOCs Installation</li>
+                    <li>Wir übernehmen auf Wunsch Hosting und Wartung der SMASHDOCs Installation</li>
                     <li>Wir planen für 2017 die Integration von SMASHDOCs mit Typo 3, Drupal, Joomla und Wordpress</li>
                 </ul>
             </div>
@@ -589,20 +589,6 @@ function onPlayerStateChange(event) {
 function stopVideo() {
     player.stopVideo();
 }
-
-function logo() {
-    var url = window.location.href;
-    if (url.indexOf('creating-content-together') > -1) {
-        var logo = 'images/logo_EN.png';
-    } else {
-        var logo = 'images/logo_DE.png';
-    }
-    $('#logo').attr('src', logo);
-}
-
-$(document).ready(function() {
-    logo();
-});
 
 </script>
 

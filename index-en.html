@@ -29,7 +29,7 @@
         <div class="col-xs-12 top">
             <div class="row">
                 <div class="col-sm-6">
-                    <img id="logo"/>
+                    <img id="logo" src="images/logo_EN.png"/>
                 </div>
                 <div class="col-sm-6">
 			<h1>Edit, manage and publish <br/>texts as a team</h1>
@@ -579,19 +579,6 @@ function stopVideo() {
     player.stopVideo();
 }
 
-function logo() {
-    var url = window.location.href;
-    if (url.indexOf('creating-content-together') > -1) {
-        var logo = 'images/logo_EN.png';
-    } else {
-        var logo = 'images/logo_DE.png';
-    }
-    $('#logo').attr('src', logo);
-}
-
-$(document).ready(function() {
-    logo();
-});
 </script>
 
 </html>
