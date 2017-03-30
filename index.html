@@ -40,7 +40,7 @@ function googleTranslateElementInit() {
         <div class="col-xs-12 top">
             <div class="row">
                 <div class="col-sm-6">
-                    <img id="logo" src="images/logo.png"/>
+                    <img id="logo"/>
                 </div>
                 <div class="col-sm-6">
                     <h1>Texte gemeinsam bearbeiten, verwalten und publizieren</h1>
@@ -589,6 +589,21 @@ function onPlayerStateChange(event) {
 function stopVideo() {
     player.stopVideo();
 }
+
+function logo() {
+    var url = window.location.href;
+    if (url.indexOf('creating-content-together') > -1) {
+        var logo = 'images/logo_EN.png';
+    } else {
+        var logo = 'images/logo_DE.png';
+    }
+    $('#logo').attr('src', logo);
+}
+
+$(document).ready(function() {
+    logo();
+});
+
 </script>
 
 </html>
