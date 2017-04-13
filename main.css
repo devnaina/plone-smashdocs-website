@@ -43,6 +43,7 @@ h2 {
     font-family: Noto !important;
     color: #717171;
     margin: -6px 0;
+    width: 400px;
 }
 
 /* ГАМНО */
@@ -134,8 +135,13 @@ ul li {
 }
 
 p {
-    font-size: 1.4em;
+    font-size: 1.3em;
     margin: 0;
+}
+
+p.bold {
+    margin-bottom: 0.75em;
+    font-size: 1.4em;
 }
 
 @media screen and (max-width: 500px) {
