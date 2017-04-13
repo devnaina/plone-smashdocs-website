@@ -84,7 +84,7 @@ footer p {
     font-family: Noto !important;
     color: #FFFFFF;
     font-weight: 300;
-    font-size: 1.3em;
+    font-size: 1.1em;
     display: inline;
     top: 3px;
     left: 10px;
@@ -104,7 +104,7 @@ ul {
 }
 
 ul li {
-	font-size: 1.3em;
+	font-size: 1.2em;
     hyphens: auto;
 }
 
@@ -136,7 +136,7 @@ ul li {
 }
 
 p {
-    font-size: 1.3em;
+    font-size: 1.2em;
     margin: 0;
     hyphens: auto;
 }
