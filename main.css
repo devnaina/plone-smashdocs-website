@@ -105,6 +105,7 @@ ul {
 
 ul li {
 	font-size: 1.3em;
+    hyphens: auto;
 }
 
 .socials {
@@ -137,6 +138,7 @@ ul li {
 p {
     font-size: 1.3em;
     margin: 0;
+    hyphens: auto;
 }
 
 p.bold {
