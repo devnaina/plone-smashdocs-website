@@ -42,10 +42,15 @@ h1 {
 h2 {
     font-family: Noto !important;
     color: #717171;
-    margin: -6px 0;
-    width: 400px;
+    margin:0;
 }
-
+img{
+	max-width:100%;
+}
+.container{
+	width:100%;
+	max-width:1170px;
+}
 /* ГАМНО */
 
 .middle_img {
@@ -65,8 +70,6 @@ h2 {
 
 footer {
     position: relative;
-    min-height: 240px;
-    width: 100vw;
     background-color: #484848;
     font-family: Noto !important;
 }
@@ -142,7 +145,7 @@ p {
 }
 
 p.bold {
-    margin-bottom: 0.75em;
+    margin-bottom: 0;
     font-size: 1.4em;
 }
 
@@ -190,17 +193,12 @@ p.bold {
     margin-top: 20px;
 }
 
-.container-fluid {
-    padding: 0 !important;
+.container-fluid {}
+.slider-sec{
+	background-color:#eaeaec;
+	margin-bottom:40px;
 }
-
 .top {
-    width: 100vw;
-    min-height: 270px;
-    height: auto; 
-    background-image: url('images/top.png');
-    background-size: cover;
-    background-position: 35%;
     margin: 0 0 40px 0;
 }
 
@@ -291,6 +289,7 @@ img.next {
     color: white;
     text-align: center;
     font-size: 0.8em;
+	padding:10px;
 }
 
 #copyright a {
@@ -320,7 +319,6 @@ table.pricing {
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     text-align: center;
-    white-space: nowrap;
 }
 
 .pricing thead tr {
@@ -351,7 +349,22 @@ span.available:before {
 }
 
 #logo {
-    margin-left: 45px;
     margin-top: 45px;
-    width: 350px;
+}
+@media (max-width:767px){
+.socials {
+    height: 140px;
+	    text-align: center;
+}
+.table-responsive {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.table-responsive {
+    min-height: .01%;
+    overflow-x: auto;
+}
 }
